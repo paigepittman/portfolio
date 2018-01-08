@@ -15,10 +15,14 @@ class Main extends Component {
 
   changeSlide(event) {
     console.log("before: " + this.state.slide);
-    let direction = event.target.getAttribute("id");
-    this.setState({slide: this.state.slide+direction+1})
-    console.log("after: " + this.state.slide);
+    let direction = event.target.getAttribute("value");
+    if (direction === "+") {
+      this.setState({slide: this.state.slide+1});
 
+    } else if (direction === "-") {
+      this.setState({slide: this.state.slide-1});
+
+    }
   }
 
   render() {

@@ -99,7 +99,10 @@ a:active {
 
 .name-col {
   width: 100%;
+  position: relative;
   z-index: 2;
+  background: white;
+
 }
 
 .name-left {

@@ -6,6 +6,7 @@ class Container extends Component {
     super();
 
     this.slideShow = this.slideShow.bind(this);
+    this.animate = this.animate.bind(this);
   }
 
   componentDidMount() {
@@ -20,10 +21,10 @@ class Container extends Component {
   slideShow() {
 
     var elem = document.getElementById("animate");
-    var pos = -70;
-    var id = setInterval(frame, 5);
+    var pos = -500;
+    var id = setInterval(frame, 1);
     function frame() {
-        if (pos == 350) {
+        if (pos == 600) {
             clearInterval(id);
         } else {
             pos++;
@@ -47,7 +48,7 @@ class Container extends Component {
 
         </div>
           <div className="col-lg-10 col-md-10 col-sm-12 slide-container">
-            <img src={"./images/"+ this.props.images[this.props.slide]} className="hash-screen" id="animate"></img>
+            <img src={"./images/"+ this.props.images[this.props.slide]} className="hash-screen" id="animate" onMouseOver={this.animate}></img>
           </div>
         <div className="col-md-1 col-sm-0"></div>
       </div>
