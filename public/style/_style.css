@@ -1,0 +1,187 @@
+body,
+html {
+  left: 0;
+  top: 0;
+  margin: 0px;
+  padding: 0px;
+  overflow-x: hidden;
+  font-family: 'Roboto', sans-serif;
+  height: 100%;
+  width: 100%;
+}
+body {
+  color: #2f2f2f;
+  font-size: 16px;
+  line-height: 1.7;
+  background-color: #fff;
+}
+a {
+  color: rgb(135, 135, 135);
+  text-decoration: none;
+
+}
+a:link {
+    color: rgb(135, 135, 135);
+    text-decoration: none;
+
+}
+
+/* visited link */
+a:visited {
+    color: rgb(135, 135, 135);
+    text-decoration: none;
+
+}
+
+/* mouse over link */
+a:hover {
+    color: rgb(135, 135, 135);
+    text-decoration: none;
+
+}
+
+/* selected link */
+a:active {
+    color: rgb(135, 135, 135);
+    text-decoration: none;
+
+}
+
+
+#root {
+  height: 100%;
+  width: 100%;
+}
+
+.container {
+  height: 100%;
+  width: 100%;
+}
+
+
+
+
+/*-----------------------Navbar--------------------------*/
+
+.navbar-row {
+  height: 15%;
+}
+.navbar {
+  position: relative;
+  width: 100%;
+}
+.menu {
+  display: inline-flex;
+  position: absolute;
+  top: 25px;
+  left: 6.5%;
+}
+
+.link {
+  padding: 10px;
+}
+
+
+
+
+/*------------------------Container----------------------------*/
+
+.slide-row {
+  position: relative;
+  height: 60%;
+}
+.slide-container {
+  position: relative;
+  height: 100%;
+  background: rgb(247, 155, 249);
+  z-index: 0;
+}
+
+.name-col {
+  width: 100%;
+  z-index: 2;
+}
+
+.name-left {
+  position: relative;
+  top: 45%;
+  width: max-content;
+  transform: rotate(0.75turn);
+  font-size: 10px;
+  color: rgb(135, 135, 135);
+
+}
+
+
+
+/*-----------------images---------------*/
+
+/*@@keyframes laptop {
+  from:
+
+}*/
+.hash-screen {
+  height: 100%;
+  position: relative;
+  z-index: -1;
+
+}
+
+
+/*--------------------------arrows--------------------*/
+.arrows {
+  width: 100%;
+}
+.left, .right {
+  width: 100%;
+  color: rgb(135, 135, 135);
+
+}
+.rightArr {
+  float: right;
+
+}
+
+/*--------------------------MEDIA QUERIES------------------------------*/
+
+
+@media (max-width: 767px) {
+
+/*--Nav--*/
+  .navbar-row {
+    height: 8%;
+  }
+  .menu {
+    display: inline-flex;
+    position: relative;
+    top: 10%;
+    left: 75%;
+  }
+  .projects {
+    visibility: hidden;
+  }
+
+/*--Container--*/
+.name-left {
+  visibility: hidden;
+}
+.slide-row {
+  position: relative;
+  height: 100%;
+}
+
+ }
+
+ @media (max-width: 417px) {
+
+   .navbar-row {
+     height: 6%;
+   }
+   .menu {
+     display: inline-flex;
+     position: relative;
+     top: 10%;
+     left: 65%;
+   }
+
+ }
