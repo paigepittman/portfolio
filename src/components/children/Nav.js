@@ -14,8 +14,8 @@ class Nav extends Component {
          <div className="col-md-12">
           <navbar className="navbar">
             <nav className="menu">
-                <nav className="projects link"><a href="#">Projects</a></nav>
-                <nav className="about link"><a href="#">About</a></nav>
+                <nav className="projects link"><a onClick={() => this.props.handleClick("projects")} >Projects</a></nav>
+                <nav className="about link"><a onClick={() => this.props.handleClick("about")}>About</a></nav>
             </nav>
 
           </navbar>

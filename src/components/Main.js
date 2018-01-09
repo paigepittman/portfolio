@@ -11,19 +11,32 @@ class Main extends Component {
       images: ["", "hash_screen.png", "porsche_screen.png", "capitol_screen.png", "groop_screen.png", ""]
     }
     this.changeSlide = this.changeSlide.bind(this);
+    this.handleClick = this.handleClick.bind(this);
+  }
+
+  handleClick(click) {
+    if (click === "projects") {
+      this.setState({slide: 0});
+    }
+    else if (click === "about") {
+      this.setState({slide: 5});
+    }
   }
 
   changeSlide(event) {
     console.log("before: " + this.state.slide);
     let direction = event.target.getAttribute("value");
     let paragraph = document.getElementById("description");
+    let title = document.getElementById("project-title");
 
     if (direction === "+" && this.state.slide <= 4) {
       paragraph.setAttribute("class", "hide");
+      title.setAttribute("class", "inactive");
       this.setState({slide: this.state.slide+1});
 
     } else if (direction === "-" && this.state.slide >= 1) {
       paragraph.setAttribute("class", "hide");
+      title.setAttribute("class", "inactive");
       this.setState({slide: this.state.slide-1});
 
     }
@@ -33,14 +46,14 @@ class Main extends Component {
     return (
       <div className="container">
 
-        <Nav />
+        <Nav handleClick={this.handleClick}/>
 
           <Container slide={this.state.slide} images={this.state.images}/>
           <div className="row arrows">
-            <div className="col-md-6 left">
+            <div className="col-md-6 col-sm-6 left">
             <a href="#"><i class="fa fa-chevron-left leftArr" value="-" aria-hidden="true" onClick={this.changeSlide}></i></a>
           </div>
-          <div className="col-md-6 right">
+          <div className="col-md-6 col-sm-6 right">
             <a href="#"><i class="fa fa-chevron-right rightArr" value="+" idaria-hidden="true" onClick={this.changeSlide}></i></a>
           </div>
           </div>

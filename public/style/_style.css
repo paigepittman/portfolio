@@ -129,12 +129,12 @@ a:active {
 }
 
 #description {
-  width: 35%;
+  width: 33%;
   position: absolute;
-  left: 20%;
+  left: 21%;
   top: 35%;
   font-family: 'Playfair Display', serif;
-
+  font-size: 12px;
 }
 
 .hide {
@@ -203,14 +203,69 @@ a:active {
 .name-left {
   visibility: hidden;
 }
+
+#slide-container {
+  position: relative;
+  height: 100%;
+
+}
 .slide-row {
   position: relative;
   height: 100%;
+
 }
+
+.hash-screen {
+  height: 55%;
+  left: -50%;
+  transform: rotate(0.07turn);
+  transition: transform 1s linear;
+  -webkit-transition: transform 1s linear;
+  -moz-transition: transform 1s linear;
+  -o-transition: transform 1s linear;
+}
+
+#description {
+  width: 40%;
+  position: absolute;
+  left: 15%;
+  top: 55%;
+  font-family: 'Playfair Display', serif;
+  font-size: 12px;
+  color: black;
+  background-color: rgb(255, 255, 255);
+  padding: 20px 20px;
+
+}
+.active {
+  transform: rotate(-0.01turn);
+  transition: transform 1s linear;
+  -webkit-transition: transform 1s linear;
+  -moz-transition: transform 1s linear;
+  -o-transition: transform 1s linear;
+  top: 2%;
+}
+
+#project-title {
+  position: absolute;
+  top: 0;
+  left: 10%;
+
+  font-size: 70px;
+  font-family: 'Playfair Display', serif;
+  color: white;
+
+}
+
+
+
+
+
+
 
  }
 
- @media (max-width: 417px) {
+ @media (max-width: 418px) {
 
    .navbar-row {
      height: 6%;
@@ -220,6 +275,78 @@ a:active {
      position: relative;
      top: 10%;
      left: 65%;
+   }
+
+   #project-image {
+
+     transition: none;
+     transform: none;
+     height: 40%;
+     position: relative;
+     left: 0;
+     top: 10%;
+     }
+
+     .hash-screen {
+       transition: none;
+       transform: none;
+       height: 50%;
+       left: 0;
+       top: 10%;
+     }
+
+
+   /*#project-image {
+     position: relative;
+
+     transition: none;
+     transform: none;
+
+   }*/
+
+   #project-title {
+     width: 100%;
+     transition: none;
+     transform: none;
+     position: absolute;
+     top: 2%;
+     left: 0;
+     text-align: center;
+     font-size: 40px;
+
+   }
+
+   #description {
+     min-width: 418px;
+     left: 0;
+     margin-top: 8%;
+     height: 100%;
+   }
+
+   .arrows {
+     width: 100%;
+     position: fixed;
+     top: 50%;
+   }
+   .left, .right {
+     width: 50%;
+
+
+
+   }
+   .leftArr {
+     text-align: left;
+     color: rgba(225, 225, 225, .5);
+   }
+   .rightArr {
+     text-align: right;
+     top: 5%;
+     color: rgba(225, 225, 225, .5);
+
+   }
+
+   body {
+     overflow: hidden;
    }
 
  }
