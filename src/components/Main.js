@@ -8,7 +8,7 @@ class Main extends Component {
     super();
     this.state = {
       slide: 0,
-      images: ["hash_screen.png", "porsche_screen.png", "capitol_screen.png", "groop_screen.png"]
+      images: ["", "hash_screen.png", "porsche_screen.png", "capitol_screen.png", "groop_screen.png", ""]
     }
     this.changeSlide = this.changeSlide.bind(this);
   }
@@ -16,10 +16,14 @@ class Main extends Component {
   changeSlide(event) {
     console.log("before: " + this.state.slide);
     let direction = event.target.getAttribute("value");
-    if (direction === "+") {
+    let paragraph = document.getElementById("description");
+
+    if (direction === "+" && this.state.slide <= 4) {
+      paragraph.setAttribute("class", "hide");
       this.setState({slide: this.state.slide+1});
 
-    } else if (direction === "-") {
+    } else if (direction === "-" && this.state.slide >= 1) {
+      paragraph.setAttribute("class", "hide");
       this.setState({slide: this.state.slide-1});
 
     }

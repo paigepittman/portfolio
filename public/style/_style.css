@@ -18,6 +18,8 @@ body {
 a {
   color: rgb(135, 135, 135);
   text-decoration: none;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
 
 }
 a:link {
@@ -90,11 +92,9 @@ a:active {
   position: relative;
   height: 60%;
 }
-.slide-container {
+#slide-container {
   position: relative;
   height: 100%;
-  background: rgb(247, 155, 249);
-  z-index: 0;
 }
 
 .name-col {
@@ -103,6 +103,10 @@ a:active {
   z-index: 2;
   background: white;
 
+}
+
+.right-col {
+  background: white;
 }
 
 .name-left {
@@ -115,20 +119,51 @@ a:active {
 
 }
 
+#project-title {
+  position: relative;
+  left: 20%;
+  top:8%;
+  font-size: 40px;
+  font-family: 'Playfair Display', serif;
+  color: white;
+}
+
+#description {
+  width: 35%;
+  position: absolute;
+  left: 20%;
+  top: 35%;
+  font-family: 'Playfair Display', serif;
+
+}
+
+.hide {
+  opacity: 0;
+
+}
+
+.show {
+  opacity: 1;
+  transition: opacity 1s linear;
+  -webkit-transition: opacity 1s linear;
+  -moz-transition: opacity 1s linear;
+  -o-transition: opacity 1s linear;
+}
+
 
 
 /*-----------------images---------------*/
 
-/*@@keyframes laptop {
-  from:
 
-}*/
 .hash-screen {
-  height: 100%;
+  height: 80%;
   position: relative;
-  z-index: -1;
+  left: 0%;
+  top: 0%;
+  z-index: 0;
 
 }
+
 
 
 /*--------------------------arrows--------------------*/
