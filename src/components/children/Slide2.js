@@ -9,7 +9,7 @@ class Slide2 extends Component {
   }
 
   render() {
-    <div>slide2</div>
+    return <div>slide2</div>
   }
 }
 

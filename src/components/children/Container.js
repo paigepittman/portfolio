@@ -1,6 +1,9 @@
 import React from 'react';
 import {Component} from 'react';
 
+import Slide1 from './Slide1';
+import Slide2 from './Slide2';
+
 class Container extends Component {
   constructor() {
     super();
@@ -24,12 +27,20 @@ class Container extends Component {
   }
 
   componentDidUpdate() {
+    var title = document.getElementById("project-title");
+    var paragraph = document.getElementById("description");
+    if (paragraph && title) {
+      paragraph.setAttribute("class", "hide");
+      title.setAttribute("class", "inactive");
+    }
+
     this.slideShow();
   }
 
 
 //responds to click and moves between slides//
   slideShow() {
+    if (this.props.slide != 0 || this.props.slide != 5) {
     var bg = document.getElementById("slide-container");
     let title = document.getElementById("project-title");
     title.setAttribute("class", "active");
@@ -72,6 +83,7 @@ class Container extends Component {
     }
 
   }
+}
 
 //responds to onMouseOver event on image///
   animate(event) {
@@ -86,8 +98,6 @@ if (window.screen.width >= 417) {
   title.style.transform = "rotate(-0.01turn)";
   title.style["font-size"] = '65px';
 }
-
-
 
   }
 
@@ -105,6 +115,35 @@ if (window.screen.width >= 417) {
 
   }
 
+  renderPage() {
+    if (this.props.slide === 0) {
+      return (
+        <div className="col-lg-10 col-md-10 col-sm-12" id="slide-container">
+          <h2 id="splash-title">hello</h2>
+          <Slide1 id="slide" />
+        </div>
+      )
+    }
+    else if (this.props.slide === 5) {
+      return (
+        <div className="col-lg-10 col-md-10 col-sm-12" id="slide-container">
+        <Slide2 />
+      </div>
+      )
+    }
+
+    else {
+      return (
+        <div className="col-lg-10 col-md-10 col-sm-12" id="slide-container" onMouseOver={this.animate} onMouseLeave={this.reverseAnimate}>
+          <h2 id="project-title" className={"title-"+this.state.titles[this.props.slide]} >{this.state.titles[this.props.slide]}</h2>
+          <p className={"hide description-"+this.state.titles[this.props.slide] } id="description">{this.state.descriptions[this.props.slide]}</p>
+
+          <img  id="project-image" src={"./images/"+ this.props.images[this.props.slide]} className={"hash-screen image-" +   this.state.titles[this.props.slide]} id="animate" onMouseOver={this.animate} onMouseLeave={this.reverseAnimate}></img>
+        </div>
+      )
+    }
+  }
+
 
 
 
@@ -117,13 +156,11 @@ if (window.screen.width >= 417) {
           <div className="name-left">PAIGE PITTMAN</div>
 
 
-        </div>
-          <div className="col-lg-10 col-md-10 col-sm-12" id="slide-container" onMouseOver={this.animate} onMouseLeave={this.reverseAnimate}>
-            <h2 id="project-title" className={"title-"+this.state.titles[this.props.slide]} >{this.state.titles[this.props.slide]}</h2>
-            <p className={"hide description-"+this.state.titles[this.props.slide] } id="description">{this.state.descriptions[this.props.slide]}</p>
 
-            <img  id="project-image" src={"./images/"+ this.props.images[this.props.slide]} className={"hash-screen image-" +   this.state.titles[this.props.slide]} id="animate" onMouseOver={this.animate} onMouseLeave={this.reverseAnimate}></img>
-          </div>
+        </div>
+
+        {this.renderPage()}
+
         <div className="col-md-1 col-sm-0 right-col"></div>
       </div>
     )

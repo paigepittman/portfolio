@@ -3,6 +3,7 @@ import {Component} from 'react';
 import Nav from './children/Nav';
 import Container from './children/Container';
 
+
 class Main extends Component {
   constructor() {
     super();
@@ -25,19 +26,17 @@ class Main extends Component {
 
   changeSlide(event) {
     console.log("before: " + this.state.slide);
-    let direction = event.target.getAttribute("value");
-    let paragraph = document.getElementById("description");
-    let title = document.getElementById("project-title");
+    var direction = event.target.getAttribute("value");
 
     if (direction === "+" && this.state.slide <= 4) {
-      paragraph.setAttribute("class", "hide");
-      title.setAttribute("class", "inactive");
       this.setState({slide: this.state.slide+1});
 
+
+
+
     } else if (direction === "-" && this.state.slide >= 1) {
-      paragraph.setAttribute("class", "hide");
-      title.setAttribute("class", "inactive");
       this.setState({slide: this.state.slide-1});
+
 
     }
   }
@@ -49,6 +48,8 @@ class Main extends Component {
         <Nav handleClick={this.handleClick}/>
 
           <Container slide={this.state.slide} images={this.state.images}/>
+
+
           <div className="row arrows">
             <div className="col-md-6 col-sm-6 left">
             <a href="#"><i class="fa fa-chevron-left leftArr" value="-" aria-hidden="true" onClick={this.changeSlide}></i></a>
