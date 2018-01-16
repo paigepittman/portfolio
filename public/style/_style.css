@@ -75,6 +75,76 @@ a:active {
 
 
 
+/*---------------------Gallery-------------------------*/
+  .outer {
+    padding: 0;
+  }
+
+  .demo4-inner {
+    overflow: hidden;
+    position: relative;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+  }
+  .demo4-photo {
+    position: absolute;
+    background-color: lightgray;
+  }
+
+
+  /*----------annimation-------*/
+  .annimate-0, .annimate-1 {
+    background-color: rgb(152, 105, 252);
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .annimate-2, .annimate-3 {
+    background-color: rgb(239, 151, 250);
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+  .annimate-4, .annimate-5  {
+    background-color: rgb(144, 245, 200);
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .annimate-6, .annimate-7  {
+    background-color: rgb(110, 163, 254);
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+
+
+  .demo7-ball {
+    width: 50px;
+    height: 50px;
+    border-radius: 99px;
+    position: absolute;
+    border: 1px solid white;
+  }
+
+
+
+
+
 /*-----------------------Navbar--------------------------*/
 
 .navbar-row {
@@ -115,23 +185,6 @@ a:active {
 }
 
 
-
-.demo7 {
-  background-color: rgb(152, 105, 252);
-  position: relative;
-  top: -14.5%;
-  width: 100%;
-  height: 100%;
-}
-.demo7-ball {
-  width: 50px;
-  height: 50px;
-  border-radius: 99px;
-  position: absolute;
-  border: 1px solid white;
-}
-
-
 .name-col {
   width: 100%;
   position: relative;
@@ -155,12 +208,13 @@ a:active {
 }
 
 #project-title {
-  position: relative;
+  position: absolute;
   left: 20%;
   top:8%;
   font-size: 40px;
   font-family: 'Playfair Display', serif;
   color: white;
+  z-index: 1;
 }
 #splash-title {
   position: relative;
@@ -214,15 +268,28 @@ a:active {
 /*--------------------------arrows--------------------*/
 .arrows {
   width: 100%;
+  margin: auto;
 }
+
 .left, .right {
   width: 100%;
   color: rgb(135, 135, 135);
 
 }
-.rightArr {
+.right {
+  position: relative;
   float: right;
+  text-align: right;
 
+}
+
+.range-slider {
+  text-align: center;
+}
+
+.rightArr, .leftArr {
+  font-size: 30px;
+  padding-top: 10px;
 }
 
 /*--------------------------MEDIA QUERIES------------------------------*/

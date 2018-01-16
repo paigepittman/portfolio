@@ -33,7 +33,7 @@ export default class Slide1 extends React.Component {
   };
 
   render() {
-
+    //console.log(this.props.slide);
     const {mouse: [mouseX, mouseY], now} = this.state;
     const styles = mouseX == null ? [] : [{
       key: now,
@@ -46,12 +46,12 @@ export default class Slide1 extends React.Component {
     }];
     return (
       <TransitionMotion id="transition" willLeave={this.willLeave} styles={styles}>
-        
+
         {circles =>
           <div
             onMouseMove={this.handleMouseMove}
             onTouchMove={this.handleTouchMove}
-            className="demo7">
+            className={"annimate-" + this.props.slide}>
             {circles.map(({key, style: {opacity, scale, x, y}}) =>
 
               <div

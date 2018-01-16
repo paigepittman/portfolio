@@ -50,15 +50,6 @@ class Main extends Component {
           <Container slide={this.state.slide} images={this.state.images}/>
 
 
-          <div className="row arrows">
-            <div className="col-md-6 col-sm-6 left">
-            <a href="#"><i class="fa fa-chevron-left leftArr" value="-" aria-hidden="true" onClick={this.changeSlide}></i></a>
-          </div>
-          <div className="col-md-6 col-sm-6 right">
-            <a href="#"><i class="fa fa-chevron-right rightArr" value="+" idaria-hidden="true" onClick={this.changeSlide}></i></a>
-          </div>
-          </div>
-
 
         </div>
     )

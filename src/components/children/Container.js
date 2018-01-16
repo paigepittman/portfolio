@@ -1,8 +1,8 @@
 import React from 'react';
 import {Component} from 'react';
 
-import Slide1 from './Slide1';
-import Slide2 from './Slide2';
+import Gallery from './Gallery';
+
 
 class Container extends Component {
   constructor() {
@@ -22,9 +22,9 @@ class Container extends Component {
 
 
 
-  componentDidMount() {
-    this.slideShow();
-  }
+  // componentDidMount() {
+  //   this.slideShow();
+  // }
 
   componentDidUpdate() {
     var title = document.getElementById("project-title");
@@ -40,7 +40,7 @@ class Container extends Component {
 
 //responds to click and moves between slides//
   slideShow() {
-    if (this.props.slide != 0 || this.props.slide != 5) {
+    if (this.props.slide != 0 && this.props.slide != 5) {
     var bg = document.getElementById("slide-container");
     let title = document.getElementById("project-title");
     title.setAttribute("class", "active");
@@ -116,23 +116,8 @@ if (window.screen.width >= 417) {
   }
 
   renderPage() {
-    if (this.props.slide === 0) {
-      return (
-        <div className="col-lg-10 col-md-10 col-sm-12" id="slide-container">
-          <h2 id="splash-title">hello</h2>
-          <Slide1 id="slide" />
-        </div>
-      )
-    }
-    else if (this.props.slide === 5) {
-      return (
-        <div className="col-lg-10 col-md-10 col-sm-12" id="slide-container">
-        <Slide2 />
-      </div>
-      )
-    }
 
-    else {
+
       return (
         <div className="col-lg-10 col-md-10 col-sm-12" id="slide-container" onMouseOver={this.animate} onMouseLeave={this.reverseAnimate}>
           <h2 id="project-title" className={"title-"+this.state.titles[this.props.slide]} >{this.state.titles[this.props.slide]}</h2>
@@ -141,7 +126,7 @@ if (window.screen.width >= 417) {
           <img  id="project-image" src={"./images/"+ this.props.images[this.props.slide]} className={"hash-screen image-" +   this.state.titles[this.props.slide]} id="animate" onMouseOver={this.animate} onMouseLeave={this.reverseAnimate}></img>
         </div>
       )
-    }
+
   }
 
 
@@ -158,9 +143,9 @@ if (window.screen.width >= 417) {
 
 
         </div>
+        
 
-        {this.renderPage()}
-
+          <Gallery />
         <div className="col-md-1 col-sm-0 right-col"></div>
       </div>
     )
